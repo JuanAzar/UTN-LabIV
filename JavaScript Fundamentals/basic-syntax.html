@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>JavaScript Fundamentals</title>
+        <script src="myScript.js"></script>
+        <script src="https://www.w3schools.com/js/myScript1.js"></script>
+    </head>
+    <body>
+        <p id="demo"></p>
+
+        <button type="button" onclick="myFunction()">Say Hello</button>
+
+        <script>
+            var x, y, z;
+            x = 5;
+            y = 6;
+            z = x + y;
+            
+            document.getElementById("demo").innerHTML =
+            "The value of z is " + z + ".";
+
+            function myFunction()
+            {
+                document.getElementById("demo").innerHTML =
+                "Hello World!.";
+            }
+
+            var intValue = parseInt("1234");
+            var floatValue = parseFloat("12.34");
+            var parseError = parseInt("John");
+
+            //Single line Commented
+
+            /*
+            Multiline commented 
+            block
+            */
+        </script>
+    </body>
+</html>
+
