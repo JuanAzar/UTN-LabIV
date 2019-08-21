@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>JavaScript Fundamentals</title>
+    </head>
+    <body>
+        <input type="text" id="myTextBox"><br>
+        <input type="text" name="firstName"><br>
+        <input type="text" class="formClass"><br><br>
+        <span>&nbsp;</span><br>
+        <span>&nbsp;</span><br>
+        <h1>&nbsp;</h1>
+        <h2>&nbsp;</h2>
+        <h3>&nbsp;</h3>
+        
+        <script>
+            function getById() {
+                document.getElementById('myTextBox').value = 'Hello World!';
+            }
+
+            function getByName() {
+                document.getElementsByName('firstName')[0].value = 'Hello World';
+            }
+
+            function getBygetByClassName() {
+                document.getElementsByClassName('formClass')[0].value = 'Hellow World!';
+            }
+
+            function getByTagName() {
+                var htmlCollection = document.getElementsByTagName('span');
+
+                var elements = Array.from(htmlCollection);
+
+                elements.forEach(function(element) {
+                    element.innerHTML = 'Hello World!';
+                });
+            }
+
+            function getBySelector() {
+                document.querySelector('h1, h2').innerHTML = 'Hello World';
+            }
+
+            function getBySelectorAll() {
+                var htmlCollection = document.querySelectorAll('h2, h3');
+
+                var elements = Array.from(htmlCollection);
+
+                elements.forEach(function(element) {
+                    element.innerHTML = 'Hello World!';
+                });
+            }
+        </script>
+
+        <button type="button" onclick="getById()">Get by Id</button><br><br>
+        <button type="button" onclick="getByName()">Get by Name</button><br><br>
+        <button type="button" onclick="getByTagName()">Get By Tag Name</button><br><br>
+        <button type="button" onclick="getBygetByClassName()">Get byb Class Name</button><br><br>
+        <button type="button" onclick="getBySelector()">Get by Query Selector</button><br><br>
+        <button type="button" onclick="getBySelectorAll()">Get by Query Selector All</button>
+    </body>
+</html>
+
