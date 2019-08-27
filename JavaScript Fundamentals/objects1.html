@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>JavaScript Fundamentals</title>
+    </head>
+    <body>
+        <script>
+            var person1 = { firstName:"John", lastName:"Doe" };
+
+            var person2 = new Object();
+            person2.firstName = "John";
+            person2.lastName = "Doe";
+
+            var person3 = person2;
+
+            console.log(person2);
+            console.log(person3);
+
+            function Person(firstName, lastName)
+            {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+
+            var Employee = function (employeeId, firstName, lastName)
+            {
+                this.employeeId = employeeId;
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.fullName = function()
+                {
+                    return this.firstName + ' ' + this.lastName;
+                }
+            }
+        
+            Employee.prototype.getEmployeeId = function()
+            {
+                return this.employeeId;
+            }
+
+            var employee = new Employee();
+            employee.employeeId = 1;
+            employee.firstName = 'John';
+            employee.lastName = 'Doe';
+
+            for(propertyName in employee)
+            {
+                console.log(propertyName + ': ' + employee[propertyName]);
+            }
+        
+            console.log(employee);
+            console.log('Full name is: ' + employee.fullName());
+            console.log('EmployeeId is: ' + employee.getEmployeeId());
+        </script>
+    </body>
+</html>
+

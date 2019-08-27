@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>JavaScript Fundamentals</title>
+    </head>
+    <body>
+        <p id="demo"></p>
+        <script>
+            var fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+
+            console.log(Array.isArray(fruits));
+            if(fruits instanceof Array)
+                console.log(true);
+            else
+                console.log(false);
+
+            //Outputs: Banana,Orange,Apple,Mango
+            document.getElementById('demo').innerHTML = fruits;
+            document.getElementById('demo').innerHTML = fruits.toString();
+            document.getElementById('demo').innerHTML = fruits.join(' | ');
+            
+            var fruit = fruits.pop();
+            console.log(fruits);
+            console.log(fruit);
+
+            fruits.push('Lemon');
+            console.log(fruits);
+
+            var fruit = fruits.shift();
+            console.log(fruits);
+            console.log(fruit);
+
+            fruits.unshift('Banana');
+            console.log(fruits);
+
+            delete fruits[0];
+            console.log(fruits);
+
+            var items = fruits.splice(2, 0, 'Kiwi', 'Pinapple');
+            console.log(fruits);
+            console.log(items);
+
+            var items = fruits.splice(0, 1);
+            console.log(fruits);
+            console.log(items);
+
+            var someFruits = fruits.slice(3);
+            console.log(fruits);
+            console.log(someFruits);
+
+            fruits.sort();
+            console.log(fruits);
+
+            fruits.reverse();
+            console.log(fruits);
+
+            var person1 = { firstName : 'Lewis', lastName : 'Ziggy' };
+            var person2 = { firstName : 'John', lastName : 'Doe' };
+
+            var personArray = [person1, person2];
+            personArray.sort(function (a, b) {
+                return (b.lastName < a.firstName) ? 1 : -1;
+            });
+            console.log(personArray);
+        </script>
+    </body>
+</html>
+

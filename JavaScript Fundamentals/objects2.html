@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>JavaScript Fundamentals</title>
+    </head>
+    <body>
+        <script>
+            //ES2015/ES6 Class
+            class Person {                
+                constructor(firstName, lastName, age){
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this._age = age;
+                }
+
+                fullName() {
+                    return this.firstName + ' ' + this.lastName;
+                }
+
+                set age(age) {
+                    this._age = age;
+                }
+
+                get age() {
+                    return this._age;
+                }
+            }
+
+            class Student extends Person{
+                constructor(firstName, lastName, age, studentId) {
+                    super(firstName, lastName, age);
+                    this.studentId = studentId;
+                }
+            }
+
+            var person = new Person('John', 'Doe', 20);
+            var student = new Student('John', 'Doe', 20, 123456);
+
+            console.log(person);
+            console.log(person.fullName());
+            console.log(student);
+        </script>
+    </body>
+</html>
+

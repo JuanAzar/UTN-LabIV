@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>JavaScript Fundamentals</title>
+    </head>
+    <body>
+        <p id="demo"></p>
+        <script>
+            var cars = ['Saab', 'Volvo', 'BMW'];
+            var fruits = new Array('Apple', 'Orange', 'Strawberry');
+
+            //Output: Saab
+            document.getElementById("demo").innerHTML = cars[0];
+
+            cars[0] = "Peugeot";
+
+            //Output: Peugeot,Volvo,BMW
+            document.getElementById("demo").innerHTML = cars;
+
+            //Output: object
+            document.getElementById("demo").innerHTML = typeof(cars);
+
+            cars[3] = { firstName: 'John', lastName: 'Doe' };
+
+            //Output: Peugeot,Volvo,BMW,[object Object]
+            document.getElementById("demo").innerHTML = cars;
+
+            //Outputs: 3
+            console.log(fruits.length);
+
+            //Outputs: Strawberry
+            console.log(fruits[fruits.length - 1]);
+
+            fruits.push('Banana');
+            fruits[fruits.length] = 'Lemon';
+
+            for(i = 0; i < fruits.length; i++) {
+                console.log(fruits[i]);
+            }
+
+            fruits.forEach(fruit => {
+                console.log(fruit);
+            })
+
+            //JavaScript does not support associative arrays
+            //This is an object not an array
+            var person = [];
+            person["firstName"] = "John";
+            person["lastName"] = "Doe";
+            person["age"] = 46;
+        </script>
+    </body>
+</html>
+
