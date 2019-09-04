@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>JavaScript Fundamentals</title>        
+    </head>
+    <body>
+        <script>
+            console.log("Start message!!");
+
+            var myFirstPromise = new Promise((resolve, reject) => {
+                setTimeout(function(){
+                    //resolve("This was successful!!");
+                    reject("Rejected!!");
+                }, 250);
+            });
+
+            myFirstPromise
+                .then((successMessage) => {
+                    console.log("Sweet! " + successMessage);
+                })
+                .catch((reason) => {
+                    console.log("Oops! " + reason);
+                });
+
+            console.log("End message!!");
+        </script>
+    </body>
+</html>

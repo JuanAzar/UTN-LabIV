@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>JavaScript Fundamentals</title>        
+    </head>
+    <body>
+        <script>
+          function resolveAfter2Seconds() {
+            return new Promise(resolve => {
+              setTimeout(() => {
+                resolve('resolved');
+                console.log('Promise is done');
+              }, 2000);
+            });
+          }
+          
+          async function asyncCall() {
+            console.log('calling');
+            var result = await resolveAfter2Seconds();
+            console.log(result);            
+          }
+          
+          asyncCall();
+          //Outputs: calling
+          //waits 2 seconds
+          //Outputs: resolved
+        </script>
+    </body>
+</html>

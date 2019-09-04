@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>JavaScript Fundamentals</title>        
+    </head>
+    <body>
+        <script>
+            var timeOutId;
+
+            function mySetTimeOutFunction() {
+                timeOutId = setTimeout(alertTimeOut, 3000);
+            }
+
+            function alertTimeOut() {
+                alert("I Love JavaScript!");
+            }
+
+            function myStopSetTimeOutFunction() {
+                clearTimeout(timeOutId);
+            }
+
+            mySetTimeOutFunction();
+            myStopSetTimeOutFunction();
+
+
+            var intervalId;
+
+            function mySetIntervalFunction() {
+                intervalId = setInterval(alertInterval, 3000);
+            }
+
+            function alertInterval() {
+                console.log("I Love JavaScript!");
+            }
+
+            function myStopSetIntervalFunction() {
+                clearInterval(intervalId);
+            }
+
+            mySetIntervalFunction();
+            myStopSetIntervalFunction();
+        </script>
+    </body>
+</html>
+
