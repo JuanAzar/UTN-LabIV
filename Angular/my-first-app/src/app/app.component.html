@@ -1,0 +1,13 @@
+<!-- app.component.html -->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>  
+</div>
+<h2>Hi, my name is: {{ name }}</h2>
+
+<ul>
+  <li *ngFor="let car of cars">{{ car.brand }} {{ car.model }}</li>
+</ul>
+
+<span *ngIf="visible">{{ cars }}</span>
