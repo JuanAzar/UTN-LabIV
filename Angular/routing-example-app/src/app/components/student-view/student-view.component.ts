@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/services/student.service';
 import { Student } from 'src/app/models/student';
 import { ActivatedRoute } from '@angular/router';
+import { StudentAsyncService } from 'src/app/services/student-async.service';
 
 //student-view-component.ts
 @Component({
@@ -11,14 +12,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./student-view.component.css']
 })
 export class StudentViewComponent implements OnInit {
-  private student: Student;
+  private student: Student = new Student();
 
-  constructor(private studentService: StudentService, private route: ActivatedRoute) { }
+  constructor(private studentService: StudentAsyncService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     let studentId = Number(this.route.snapshot.paramMap.get('id'));
     
-    this.student = this.studentService.getById(studentId);
+    this.studentService.getById(studentId)
+      .then(response => {
+        this.student = response;
+      })
+      .catch(error => {
+      
+      });
   }
 
 }

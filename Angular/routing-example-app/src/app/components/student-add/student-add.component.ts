@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Student } from 'src/app/models/student';
 import { StudentService } from 'src/app/services/student.service';
+import { StudentAsyncService } from 'src/app/services/student-async.service';
 
 @Component({
   selector: 'app-student-add',
@@ -13,8 +14,9 @@ export class StudentAddComponent implements OnInit {
   dni : string;
   email : string;
   address : string;
+  message : string;
 
-  constructor(private studentService: StudentService) { }
+  constructor(private studentService: StudentAsyncService) { }
 
   ngOnInit() {
   }
@@ -28,6 +30,12 @@ export class StudentAddComponent implements OnInit {
     student.email = this.email;
     student.address = this.address;
 
-    this.studentService.add(student);
+    this.studentService.add(student)
+    .then(response => {
+      this.message = response;
+    })
+    .catch(error => {
+      this.message = error;
+    });
   }
 }
