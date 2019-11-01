@@ -1,25 +1,26 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Student } from 'src/app/models/student';
-import { StudentService } from 'src/app/services/student.service';
-import { StudentAsyncService } from 'src/app/services/student-async.service';
+import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { FormGroup } from '@angular/forms';
 
+//Reactive Forms
 @Component({
-  selector: 'app-student-list',
-  templateUrl: './student-list.component.html',
-  styleUrls: ['./student-list.component.css']
+  selector: 'my-component',
+  template: 'MyComponent Template'
 })
-export class StudentListComponent implements OnInit {
-  studentList = new Array<Student>();
-
-  constructor(private studentService: StudentAsyncService) { }
+export class MyComponent implements OnInit {
+  nameChangeLog: string[] = [];
+  studentForm: FormGroup;
 
   ngOnInit() {
-    this.studentService.getAll()
-      .then(response => {
-        this.studentList = response;
-      })
-      .catch(error => {
-      
-      });
+    this.logNameChange();
+  }
+  logNameChange() {
+    const firstNameControl = this.studentForm.get('firstName');
+    firstNameControl.valueChanges.forEach(
+      (value: string) => this.nameChangeLog.push(value)
+    );
   }
 }
+

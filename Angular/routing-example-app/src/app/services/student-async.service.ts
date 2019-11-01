@@ -11,9 +11,13 @@ export class StudentAsyncService {
   private apiURL = 'https://utn2019-avanzada2-tp8.herokuapp.com/api/students/'
   constructor(private http: HttpClient) { }
 
-  getAll(): Promise<any>{
+  getAll2(): Promise<any>{
     return this.http.get(this.apiURL)
       .toPromise();
+  }
+
+  getAll() {
+    return this.http.get(this.apiURL);
   }
 
   getById(studentId: number): Promise<any>{
