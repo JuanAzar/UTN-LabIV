@@ -27,7 +27,7 @@ export class AuthService {
       response => {
       
       this.token = response['jwt'];
-      console.log(this.token);
+      localStorage.setItem('token', this.token);      
     },
       error => {
         
