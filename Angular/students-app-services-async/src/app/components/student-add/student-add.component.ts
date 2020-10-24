@@ -10,7 +10,7 @@ import { StudentAsyncService } from 'src/app/services/student-async.service';
 export class StudentAddComponent implements OnInit {
   firstName : string;
   lastName : string;
-  dni : string;
+  dni : number;
   email : string;
   address : string;
   message : string;

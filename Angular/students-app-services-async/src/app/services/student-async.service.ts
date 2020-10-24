@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class StudentAsyncService {
-  private apiURL = 'https://utn-avanzada2-students.herokuapp.com/api/student/'
+  private apiURL = 'https://utn-avanzada2-students.herokuapp.com/api/student'
   constructor(private http: HttpClient) { }
   
   getAll(): Promise<any>{
@@ -18,7 +18,7 @@ export class StudentAsyncService {
 
   getById(studentId: number): Promise<any>{
     console.log(this.apiURL + studentId);
-    return this.http.get(this.apiURL + studentId)
+    return this.http.get(this.apiURL + '/' + studentId)
       .toPromise();
   }
 
