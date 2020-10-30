@@ -17,8 +17,12 @@ export class StudentAsyncService {
   }
 
   getById(studentId: number): Promise<any>{
-    console.log(this.apiURL + studentId);
     return this.http.get(this.apiURL + '/' + studentId)
+      .toPromise();
+  }
+
+  getByEmail(email: string): Promise<any>{
+    return this.http.get(this.apiURL + '/GetByEmail/' + email)
       .toPromise();
   }
 

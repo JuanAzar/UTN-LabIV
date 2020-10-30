@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CustomValidators } from 'src/app/common/custom-validators';
 import { Student } from 'src/app/models/student';
 import { StudentAsyncService } from 'src/app/services/student-async.service';
 
@@ -10,12 +11,13 @@ import { StudentAsyncService } from 'src/app/services/student-async.service';
 })
 export class StudentAddComponent implements OnInit {
   message: string = '';
+  errors: Array<string> = [];
 
   studentForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    dni: new FormControl(''),
-    email: new FormControl(''),
+    firstName: new FormControl('', [ Validators.required, CustomValidators.lettersOnly() ]),
+    lastName: new FormControl('', [ Validators.required, CustomValidators.lettersOnly() ]),
+    dni: new FormControl('', [ Validators.required ]),
+    email: new FormControl('', [ Validators.required, CustomValidators.forbiddenWords(/mail/) ], [ CustomValidators.emailExists(this.studentService) ]),
     address: new FormControl('')
   });
    
@@ -25,7 +27,13 @@ export class StudentAddComponent implements OnInit {
     
   }
 
-  addStudent(){
+  get firstName() { return this.studentForm.get('firstName'); }
+  get lastName() { return this.studentForm.get('lastName'); }
+  get dni() { return this.studentForm.get('dni'); }
+  get email() { return this.studentForm.get('email'); }
+  get address() { return this.studentForm.get('address'); }
+
+  onSubmit(){
     let student = new Student();
     student.firstName = this.studentForm.get('firstName').value;
     student.lastName = this.studentForm.get('lastName').value;
