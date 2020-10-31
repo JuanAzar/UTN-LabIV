@@ -25,7 +25,6 @@
                             <label for="">Email</label>
                             <input type="email" name="email" formControlName="email" class="form-control form-control-ml" value="">
                         </div>
-
                         <div class="col-lg-8">
                             <label for="">Address</label>
                             <input type="text" name="address" formControlName="address" class="form-control form-control-ml" value="">
@@ -66,15 +65,16 @@
                         <div class="alert alert-danger" role="alert" *ngIf="email.errors?.required">
                             Email is required
                         </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="email.errors?.email">
+                            Email address must contain a correct email format
+                        </div> 
                         <div class="alert alert-danger" role="alert" *ngIf="email.errors?.forbiddenWords">
                             Invalid domain
-                        </div>                       
-                    </div>
-                    <div class="col-lg-12">
+                        </div>
                         <div class="alert alert-danger" role="alert" *ngIf="email.errors?.emailExists">
                             This email address is already assigned to another Student
-                        </div>                       
-                    </div>
+                        </div>                        
+                    </div>                   
                 </div>
                 <div class="row" *ngIf="message">
                     <div class="col-lg-12">

@@ -11,13 +11,12 @@ import { StudentAsyncService } from 'src/app/services/student-async.service';
 })
 export class StudentAddComponent implements OnInit {
   message: string = '';
-  errors: Array<string> = [];
 
   studentForm = new FormGroup({
     firstName: new FormControl('', [ Validators.required, CustomValidators.lettersOnly() ]),
-    lastName: new FormControl('', [ Validators.required, CustomValidators.lettersOnly() ]),
-    dni: new FormControl('', [ Validators.required ]),
-    email: new FormControl('', [ Validators.required, CustomValidators.forbiddenWords(/mail/) ], [ CustomValidators.emailExists(this.studentService) ]),
+    lastName: new FormControl('' , [ Validators.required, CustomValidators.lettersOnly() ] ),
+    dni: new FormControl('', [ Validators.required ] ),
+    email: new FormControl('', [ Validators.required, Validators.email, CustomValidators.forbiddenWords(/mail.com/) ], [ CustomValidators.emailExists(this.studentService) ]),
     address: new FormControl('')
   });
    
