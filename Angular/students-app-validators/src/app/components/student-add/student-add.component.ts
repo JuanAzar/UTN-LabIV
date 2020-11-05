@@ -14,8 +14,8 @@ export class StudentAddComponent implements OnInit {
 
   studentForm = new FormGroup({
     firstName: new FormControl('', [ Validators.required, CustomValidators.lettersOnly() ]),
-    lastName: new FormControl('' , [ Validators.required, CustomValidators.lettersOnly() ] ),
-    dni: new FormControl('', [ Validators.required ] ),
+    lastName: new FormControl('', [ Validators.required, CustomValidators.lettersOnly() ]),
+    dni: new FormControl('', [ Validators.required ]),
     email: new FormControl('', [ Validators.required, Validators.email, CustomValidators.forbiddenWords(/mail.com/) ], [ CustomValidators.emailExists(this.studentService) ]),
     address: new FormControl('')
   });
@@ -34,11 +34,11 @@ export class StudentAddComponent implements OnInit {
 
   onSubmit(){
     let student = new Student();
-    student.firstName = this.studentForm.get('firstName').value;
-    student.lastName = this.studentForm.get('lastName').value;
-    student.dni = this.studentForm.get('dni').value;
-    student.email = this.studentForm.get('email').value;
-    student.address = this.studentForm.get('address').value;
+    student.firstName = this.firstName.value
+    student.lastName = this.lastName.value;
+    student.dni = this.dni.value;
+    student.email = this.email.value;
+    student.address = this.address.value;
 
     this.studentService.add(student)
       .then(response  => {

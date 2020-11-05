@@ -13,7 +13,7 @@ export class CustomValidators {
     static lettersOnly(): ValidatorFn {
         let regExp: RegExp = /^[a-zA-Z\s]*$/;
 
-        return (control: AbstractControl): {[key: string]: any} | null => {            
+        return (control: AbstractControl): {[key: string]: any} | null => {                     
             const lettersOnly = regExp.test(control.value);
 
             return !lettersOnly ? { 'lettersOnly': {value: control.value} } : null;

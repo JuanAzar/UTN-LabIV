@@ -25,7 +25,7 @@ export class StudentAddComponent implements OnInit {
     
   }
 
-  addStudent(){
+  onSubmit(){
     let student = new Student();
     student.firstName = this.studentForm.get('firstName').value;
     student.lastName = this.studentForm.get('lastName').value;
