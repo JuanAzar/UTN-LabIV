@@ -1,0 +1,27 @@
+<main class="py-5">
+    <section id="listado" class="mb-5">
+         <div class="container">
+              <h2 class="mb-4">Product List</h2>
+              <table class="table table-striped">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Category Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let product of productList">
+                    <th scope="row">{{ product.productId  }}</th>
+                    <td>{{ product.productCategoryId }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.price }}</td>
+                  </tr>                  
+                </tbody>
+              </table>
+         </div>
+    </section>
+</main>
