@@ -8,36 +8,40 @@ import { LoginCredentials } from '../models/login-credentials';
 })
 export class AuthService {
   token = undefined;
+  userDetails = undefined;
+  //loginUrl = "https://localhost:44320/api/User/Login";
+  loginUrl = "https://utn-avanzada2-tp-final.herokuapp.com/api/User/Login";
   redirectUrl: string;
 
   constructor (private http: HttpClient){
 
   }
 
-  login(loginCredentials : LoginCredentials): Observable<any> {
+  login(loginCredentials : LoginCredentials): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
       })
     };
 
-    const observable = this.http.post('https://localhost:44320/api/User/Login', loginCredentials, httpOptions);
+    const promise = this.http.post(this.loginUrl, loginCredentials, httpOptions)
+    .toPromise();
 
-    observable.subscribe(
-      response => {
-      
-      this.token = response['token'];
-      console.log(this.token);
-      localStorage.setItem('token', this.token);      
-    },
-      error => {
+    promise
+      .then(response => { 
+        this.token = response['token'];
         
-    })
+        sessionStorage.setItem('token', this.token);      
+      })
+      .catch(error => {
+        console.log(error);
+      })
 
-    return observable;
+    return promise;
   }
 
   logout(): void {
+    sessionStorage.removeItem('token');
     this.token = undefined;
   }
 }

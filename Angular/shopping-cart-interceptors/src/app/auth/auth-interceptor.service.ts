@@ -12,7 +12,7 @@ export class AuthInterceptorService implements HttpInterceptor {
   constructor(private router: Router) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
 
     let request = req;
 
@@ -28,6 +28,9 @@ export class AuthInterceptorService implements HttpInterceptor {
       catchError((err: HttpErrorResponse) => {
 
         if (err.status === 401) {
+          this.router.navigateByUrl('/login');
+        }
+        else if (err.status === 403) {
           this.router.navigateByUrl('/login');
         }
 

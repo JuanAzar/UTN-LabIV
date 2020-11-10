@@ -8,12 +8,14 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ProductListComponent
+    ProductListComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

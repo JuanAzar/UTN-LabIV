@@ -6,6 +6,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
+  { path: "logout", component: LoginComponent, canActivate: [AuthGuard] },
   { path: "products", component: ProductListComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: "**", redirectTo: "", component: LoginComponent },

@@ -28,16 +28,16 @@ export class LoginComponent implements OnInit {
     userCredentials.email = this.email;
     userCredentials.password = this.password;
 
-    this.authService.login(userCredentials).subscribe(
-      response => {    
+    this.authService.login(userCredentials)
+      .then(response => {
         if (this.authService.token) {
           let redirect = this.authService.redirectUrl ? this.router.parseUrl(this.authService.redirectUrl) : '/products';
           
           this.router.navigateByUrl(redirect);
         }
-      },
-    error => {
-      
-    });
+      })
+      .catch(error => {
+        console.log(error);
+      });      
   }
 }
