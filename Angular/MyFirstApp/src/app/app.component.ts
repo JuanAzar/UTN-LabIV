@@ -10,7 +10,7 @@ import { Car } from './models/car';
 export class AppComponent {
   title = 'my first app using Angular';
   name = 'John Doe';
-  cars = [];
+  cars : Array<Car> = [];
   visible = false;
 
   constructor()
