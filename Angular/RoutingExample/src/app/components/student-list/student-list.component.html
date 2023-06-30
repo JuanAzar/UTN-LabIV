@@ -1,0 +1,27 @@
+<main class="py-5">
+    <section id="listado" class="mb-5">
+         <div class="container">
+              <h2 class="mb-4">Student List</h2>
+              <table class="table table-striped">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name </th>
+                    <th scope="col">Email</th>
+                    <th scope="col">View</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let student of studentList">
+                    <th scope="row">{{ student.studentId  }}</th>
+                    <td>{{ student.firstName }}</td>
+                    <td>{{ student.lastName }}</td>
+                    <td>{{ student.email }}</td>
+                    <td><a class="btn btn-success btn-sm" [routerLink]="['/view/', student.studentId ]">View Details</a></td>
+                  </tr>                  
+                </tbody>
+              </table>
+         </div>
+    </section>
+</main>
