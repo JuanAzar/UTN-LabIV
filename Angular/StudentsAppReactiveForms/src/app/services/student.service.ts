@@ -9,13 +9,7 @@ export class StudentService {
   private studentList = new Array<Student>();
   private studentId = 0;
 
-  constructor() { }
-
-  add(student: Student){
-    this.studentId++;
-    student.studentId = this.studentId;
-    this.studentList.push(student);
-  }
+  constructor() { } 
 
   getAll(){
     return this.studentList;
@@ -27,6 +21,12 @@ export class StudentService {
     });
 
     return (students.length > 0) ? students[0] : null;
-  }  
+  }
+  
+  add(student: Student){
+    this.studentId++;
+    student.studentId = this.studentId;
+    this.studentList.push(student);
+  }
 }
 
