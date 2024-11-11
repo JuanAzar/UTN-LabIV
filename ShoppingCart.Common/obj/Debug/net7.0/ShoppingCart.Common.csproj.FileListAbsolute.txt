@@ -1,0 +1,12 @@
+/Users/juan.azar/Repos/UTN-ShoppingCartApi/ShoppingCart.Common/bin/Debug/net7.0/ShoppingCart.Common.deps.json
+/Users/juan.azar/Repos/UTN-ShoppingCartApi/ShoppingCart.Common/bin/Debug/net7.0/ShoppingCart.Common.dll
+/Users/juan.azar/Repos/UTN-ShoppingCartApi/ShoppingCart.Common/bin/Debug/net7.0/ShoppingCart.Common.pdb
+/Users/juan.azar/Repos/UTN-ShoppingCartApi/ShoppingCart.Common/obj/Debug/net7.0/ShoppingCart.Common.csproj.AssemblyReference.cache
+/Users/juan.azar/Repos/UTN-ShoppingCartApi/ShoppingCart.Common/obj/Debug/net7.0/ShoppingCart.Common.GeneratedMSBuildEditorConfig.editorconfig
+/Users/juan.azar/Repos/UTN-ShoppingCartApi/ShoppingCart.Common/obj/Debug/net7.0/ShoppingCart.Common.AssemblyInfoInputs.cache
+/Users/juan.azar/Repos/UTN-ShoppingCartApi/ShoppingCart.Common/obj/Debug/net7.0/ShoppingCart.Common.AssemblyInfo.cs
+/Users/juan.azar/Repos/UTN-ShoppingCartApi/ShoppingCart.Common/obj/Debug/net7.0/ShoppingCart.Common.csproj.CoreCompileInputs.cache
+/Users/juan.azar/Repos/UTN-ShoppingCartApi/ShoppingCart.Common/obj/Debug/net7.0/ShoppingCart.Common.dll
+/Users/juan.azar/Repos/UTN-ShoppingCartApi/ShoppingCart.Common/obj/Debug/net7.0/refint/ShoppingCart.Common.dll
+/Users/juan.azar/Repos/UTN-ShoppingCartApi/ShoppingCart.Common/obj/Debug/net7.0/ShoppingCart.Common.pdb
+/Users/juan.azar/Repos/UTN-ShoppingCartApi/ShoppingCart.Common/obj/Debug/net7.0/ref/ShoppingCart.Common.dll

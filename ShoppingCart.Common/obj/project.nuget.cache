@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "yVzk0628sEW8PTUpyc9hW2Gf7Pyl0yZKZ8Pq2oJGi30Y4qkk65OtPyrp8hjgvcCD/G0KC7yre+NE4j3JXPMKBQ==",
+  "success": true,
+  "projectFilePath": "/Users/juan.azar/Repos/UTN-ShoppingCartApi/ShoppingCart.Common/ShoppingCart.Common.csproj",
+  "expectedPackageFiles": [
+    "/Users/juan.azar/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.2/microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "/Users/juan.azar/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
