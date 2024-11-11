@@ -1,0 +1,10 @@
+[{"productId":1,"productCategoryId":5,"name":"Bread - White, Sliced","description":"Carbonated Water - Peach","price":45194.55},
+{"productId":2,"productCategoryId":2,"name":"Crackers - Melba Toast","description":"Nantucket - Carrot Orange","price":31388.36},
+{"productId":3,"productCategoryId":2,"name":"Crush - Orange, 355ml","description":"Carbonated Water - Blackberry","price":34669.69},
+{"productId":4,"productCategoryId":1,"name":"Coke - Classic, 355 Ml","description":"Pasta - Orzo, Dry","price":3565.68},
+{"productId":5,"productCategoryId":3,"name":"Potatoes - Pei 10 Oz","description":"Wonton Wrappers","price":12561.63},
+{"productId":6,"productCategoryId":5,"name":"Tea - Orange Pekoe","description":"Croissants Thaw And Serve","price":7066.68},
+{"productId":7,"productCategoryId":2,"name":"Cheese - Roquefort Pappillon","description":"Wine - Chablis J Moreau Et Fils","price":285.34},
+{"productId":8,"productCategoryId":1,"name":"Icecream - Dstk Strw Chseck","description":"Egg Patty Fried","price":46195.33},
+{"productId":9,"productCategoryId":5,"name":"Nantucket Cranberry Juice","description":"Wine - Malbec Trapiche Reserve","price":5849.69},
+{"productId":10,"productCategoryId":2,"name":"V8 - Berry Blend","description":"Fish - Base, Bouillion","price":46790.71}]
