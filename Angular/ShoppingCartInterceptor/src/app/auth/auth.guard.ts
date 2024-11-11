@@ -1,30 +1,22 @@
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from "@angular/router";
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from "@angular/router";
 import { AuthService } from "./auth.service";
+import { inject } from "@angular/core";
 
-export class AuthGuard implements CanActivate {
-    constructor(private authService: AuthService, private router: Router) {}
-    
-    canActivate(
-      next: ActivatedRouteSnapshot,
-      state: RouterStateSnapshot): boolean {
-      let url: string = state.url;
+export const AuthGuard = () => {
+  const authService = inject(AuthService);
+  const router = inject(Router);
+
+  const url = router.routerState.snapshot.url;
+
+  // If logged in and token exists, then return true
+  if (authService.token)
+    return true;
+
+  // Store the attempted URL for redirecting
+  authService.redirectUrl = url;
+
+  // Navigate to the login page with extras
+  router.navigate(['/login']);
   
-      return this.checkLogin(url);
-    }
-  
-    checkLogin(url: string): boolean {
-      console.log('IsLoggedIn:' + this.authService.token);
-  
-      if (this.authService.token)
-        return true;
-  
-      // Store the attempted URL for redirecting
-      this.authService.redirectUrl = url;
-  
-      // Navigate to the login page with extras
-      this.router.navigate(['/login']);
-      
-      return false;
-    }
-  }
-  
+  return false;
+}

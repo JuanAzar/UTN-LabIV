@@ -6,8 +6,7 @@ import { Product } from '../models/product';
   providedIn: 'root'
 })
 export class ProductService {
-  //url = "https://localhost:44320/api/Product";
-  url = "https://utn-avanzada2-tp-final.herokuapp.com/api/Product"
+  url = "https://utn-lubnan-api-2.herokuapp.com/api/Product";
 
   constructor(private httpClient : HttpClient) { }
 
